@@ -1,6 +1,6 @@
 ### Efective Java 3/E (author = "Joshua Bloch";)
 
-#### [1. 들어가기]
+#### [1. 들어가기](https://github.com/Hooneats/TIL/blob/main/Efective_Java/1%EC%9E%A5_%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0/1_%EB%93%A4%EC%96%B4%EA%B0%80%EA%B8%B0.md)
 
 #### [2. 객체 생성과 파괴]
 
