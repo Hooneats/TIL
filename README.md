@@ -5,5 +5,5 @@
 ---
 ### [토비의 스프링 3.1 Vol.1 (author = "이밀민";)](https://github.com/Hooneats/TIL/blob/main/Toby's_Spring_Vol1/ToBy's_Spring_Vol1.md)
 ---
-### [토비의 스프링 3.1 Vol.1 (author = "이밀민";)](https://github.com/Hooneats/TIL/blob/main/Toby's_Spring_Vol2/ToBy's_Spring_Vol2.md)
+### [토비의 스프링 3.1 Vol.2 (author = "이밀민";)](https://github.com/Hooneats/TIL/blob/main/Toby's_Spring_Vol2/ToBy's_Spring_Vol2.md)
 ---
