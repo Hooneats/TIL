@@ -1,6 +1,6 @@
 ### [토비의 스프링 3.1 Vol.1 (author = "이밀민";)]
 
-#### [1. 오브젝트와 의존관계](https://github.com/Hooneats/TIL/blob/main/Toby's_Spring_Vol1/1%EC%9E%A5_%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%99%80_%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84/1-1_%EC%B4%88%EB%82%9C%EA%B0%90_DAO.md)
+#### [1. 오브젝트와 의존관계](https://github.com/Hooneats/TIL/blob/main/Toby's_Spring_Vol1/1%EC%9E%A5_%EC%98%A4%EB%B8%8C%EC%A0%9D%ED%8A%B8%EC%99%80_%EC%9D%98%EC%A1%B4%EA%B4%80%EA%B3%84/1%EC%9E%A5_Index.md)
 
 #### [2. 테스트]
 
