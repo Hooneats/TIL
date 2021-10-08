@@ -1,6 +1,6 @@
 ## 2.객체 생성과 파괴
 
-### 3.private 생성자나 열거 타입으로 싱글턴임을 보증하라
+### [3.private 생성자나 열거 타입으로 싱글턴임을 보증하라]()
 #### 싱글턴은 spring 에서 @Service, @Controller, @Repository, @Component 등 Bean 을 생성하는 기본적인 전략으로 사용되는 패턴으로 사용된다.
 #### 이러한 싱글톤에 대해 알아보자.
 
@@ -111,7 +111,7 @@ public enum Elvis {
 
 ## 참고 블로그 : 
 [[이펙티브 자바] 아이템 3. private 생성자나 열거 타입으로 싱글턴임을 보증하라](https://velog.io/@lychee/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C-%EC%9E%90%EB%B0%94-%EC%95%84%EC%9D%B4%ED%85%9C-3.-private-%EC%83%9D%EC%84%B1%EC%9E%90%EB%82%98-%EC%97%B4%EA%B1%B0-%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C-%EC%8B%B1%EA%B8%80%ED%84%B4%EC%9E%84%EC%9D%84-%EB%B3%B4%EC%A6%9D%ED%95%98%EB%9D%BC)
-[이펙티브 자바 03. private 생성자, enum 자료형, 싱글톤 패턴](https://plposer.tistory.com/64)
+[이펙티브 자바 03. private 생성자, - enum 자료형, 싱글톤 패턴](https://plposer.tistory.com/64)
 ---
 [헤드퍼스트 디자인 패턴: 5. 싱글턴 패턴](https://plposer.tistory.com/22?category=599723)
 [[Design Pattern] 싱글턴 패턴(Singleton pattern)](https://mytodays.tistory.com/26)
