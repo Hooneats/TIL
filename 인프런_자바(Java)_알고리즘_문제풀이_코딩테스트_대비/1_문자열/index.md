@@ -18,7 +18,7 @@
 ### x.toCharArray() // String 문자를 문자(글자) 베열로 바꿔준다.
 ### Character.isLowerCase(x) // x가 소문자인지 확인
 ### Character.isUpperCase(x) // x가 대문자인지 확인
-### 아스키 코드로는 대문자는 65~90, 소문자는 97~122 딱 32만큼 차이난다.
+### 아스키 코드로는 대문자는 65 ~ 90, 소문자는 97 ~ 122 딱 32만큼 차이난다.
 ### 소문자인 x 이면 x-32 하면 대문자가 되고 이는 형변환을 해줘야 문자로 바뀐다. (char)(x-32);
 ### Integer.MIN_VALUE; // 는 Integer 타입의 가장 작은 값이 리턴된다.
 ### String[] s = x.split(" "); // 는 띄어 쓰기 기준으로 잘라 String 배열을 만든다
