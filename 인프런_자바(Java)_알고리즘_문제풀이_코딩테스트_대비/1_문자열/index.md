@@ -10,7 +10,12 @@
 #### [10.가장짧은문자거리](https://github.com/Hooneats/TIL/blob/main/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%9E%90%EB%B0%94(Java)_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98_%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8_%EB%8C%80%EB%B9%84/1_%EB%AC%B8%EC%9E%90%EC%97%B4/10_%EA%B0%80%EC%9E%A5%EC%A7%A7%EC%9D%80%EB%AC%B8%EC%9E%90%EA%B1%B0.md)
 #### [11.문자열압축](https://github.com/Hooneats/TIL/blob/main/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%9E%90%EB%B0%94(Java)_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98_%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8_%EB%8C%80%EB%B9%84/1_%EB%AC%B8%EC%9E%90%EC%97%B4/11_%EB%AC%B8%EC%9E%90%EC%97%B4%EC%95%95%EC%B6%95.md)
 #### [12.암호](https://github.com/Hooneats/TIL/blob/main/%EC%9D%B8%ED%94%84%EB%9F%B0_%EC%9E%90%EB%B0%94(Java)_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98_%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4_%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8_%EB%8C%80%EB%B9%84/1_%EB%AC%B8%EC%9E%90%EC%97%B4/12_%EC%95%94%ED%98%B8.md)
-
+---
+1. replace(), replaceAll() 을 고려하라
+2. toCharArray() 를 고려하라 ->
+- // 숫자의 아스키 코드는 (0)48~(9)57 이다.
+- // 대문자의 아스키 코드는 (A)65~(Z)90 이다.
+- // 소문자의 아스키 코드는 (a)97~(z)122 이다.
 ---
 # 요약
 ### x.toUpperCase() // String 문자를 전부 대문자로 바꿔준다.
