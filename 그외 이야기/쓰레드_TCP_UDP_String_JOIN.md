@@ -9,7 +9,7 @@
 ### - 멀티쓰레드는 한 프로세스 안에 쓰레드를 여러개 실행시키는 방식으로 각 쓰레드는 별도의 stack 영역을 갖지만,
 ###     heap 영역이나, data 영역, code 영역은 공유해서 사용한다. stack 영역은 해당 쓰레드를 위한 스텍 생성을 할 뿐 공유하지는 않는다.
 
-<img src='../쓰레드영역.PNG' width="450px"/>
+<img src='쓰레드영역.PNG' width="450px"/>
 
 ##### 이미지 블로그 출처 : https://3dmpengines.tistory.com/2003
 ##### 이미지 원본 출처 : http://www-01.ibm.com/support/knowledgecenter/SSLTBW_1.12.0/com.ibm.zos.r12.euvmo00/euva3a00451.htm
@@ -23,7 +23,7 @@
 ### 3.join() 을 사용하여 해당 쓰레드가 종료될 때까지 실행을 멈출 수 있다. ex) thread1.start(); thread2.start(); thread1.join(); thread2.join();
 ### 4.Spring 에서 제공하는  AOP 방법/ @Transactional로 처리를 해줄 수 있음. 해당 어노테이션으로 AOP를 설정하면 메소드를 실행하기 전 프록시를 통해 lock, unlock 처리가 가능하다.
 
-<img src='../쓰레드_라이프싸이클.PNG' width="450px"/>
+<img src='쓰레드_라이프싸이클.PNG' width="450px"/>
 
 ### 쓰레드를 생성하는 방법은으로는
 ### 1.Thread 클래스를 상속받아 run() 메소드를 오버라이딩한 뒤에 start() 로 실행
