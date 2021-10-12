@@ -3,3 +3,5 @@
 ### [2_생성자에_매개변수가_많다면_빌더를_고려하라](https://github.com/Hooneats/TIL/blob/main/Efective_Java/2%EC%9E%A5_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1%EA%B3%BC_%ED%8C%8C%EA%B4%B4/2_%EC%83%9D%EC%84%B1%EC%9E%90%EC%97%90_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98%EA%B0%80_%EB%A7%8E%EB%8B%A4%EB%A9%B4_%EB%B9%8C%EB%8D%94%EB%A5%BC_%EA%B3%A0%EB%A0%A4%ED%95%98%EB%9D%BC.md)
 
 ### [3_private 생성자나 열거 타입으로 싱글턴임을 보증하라](https://github.com/Hooneats/TIL/blob/main/Efective_Java/2%EC%9E%A5_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1%EA%B3%BC_%ED%8C%8C%EA%B4%B4/3_private_%EC%83%9D%EC%84%B1%EC%9E%90%EB%82%98_%EC%97%B4%EA%B1%B0_%ED%83%80%EC%9E%85%EC%9C%BC%EB%A1%9C_%EC%8B%B1%EA%B8%80%ED%83%80%EC%9E%85%EC%9D%84_%EB%B3%B4%EC%A6%9D%ED%95%98%EB%9D%BC.md)
+
+### [4. 인스턴스화를 막으려거든 private 생성자를 사용하라](https://github.com/Hooneats/TIL/blob/main/Efective_Java/2%EC%9E%A5_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1%EA%B3%BC_%ED%8C%8C%EA%B4%B4/4_%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%ED%99%94%EB%A5%BC_%EB%A7%89%EC%9C%BC%EB%A0%A4%EA%B1%B0%EB%93%A0_private_%EC%83%9D%EC%84%B1%EC%9E%90%EB%A5%BC_%EC%82%AC%EC%9A%A9%ED%95%98%EB%9D%BC.md)
