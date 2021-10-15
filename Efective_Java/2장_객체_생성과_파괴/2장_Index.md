@@ -8,4 +8,6 @@
 
 ### [5. 자원을 직접 명시하지 말고 의존 객체 주입을 사용해라](https://github.com/Hooneats/TIL/blob/main/Efective_Java/2%EC%9E%A5_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1%EA%B3%BC_%ED%8C%8C%EA%B4%B4/5_%EC%9E%90%EC%9B%90%EC%9D%84_%EC%A7%81%EC%A0%91_%EB%AA%85%EC%8B%9C%ED%95%98%EC%A7%80_%EB%A7%90%EA%B3%A0_%EC%9D%98%EC%A1%B4_%EA%B0%9D%EC%B2%B4_%EC%A3%BC%EC%9E%85%EC%9D%84_%EC%82%AC%EC%9A%A9%ED%95%B4%EB%9D%BC.md)
 
+### [6. 불필요한 객체 생성을 피하라]()
+
 
