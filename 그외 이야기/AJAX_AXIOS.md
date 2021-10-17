@@ -5,7 +5,7 @@
 
 ### AXIOS (Promise based HTTP client for the browser and node.js)
 #### XHR(XML Http Request) 는 잘 디자인 된 API 가 아니다.
-#### 때문에 좀 더 Http 에 최적화 되어있고 코드도 간결한 AXIS 와 FETCH 가 나오게 되었다.
+#### 때문에 좀 더 Http 에 최적화 되어있고 코드도 간결한 AXIOS 와 FETCH 가 나오게 되었다.
 #### Axios 는 node.js 와 브라우저를 위한 HTTP 통신 라이브러리이다.
 #### 비동기로 HTTP 통신을 가능하게 해주며 return 을 promise 객체로 해주기 때문에 response 데이터를 다루기도 쉽다.
 
