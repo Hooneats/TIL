@@ -27,8 +27,12 @@
 ###### promise 객체는 .then() 으로 실행을 보장받음으로써(마치 콜백함수 같이) 실행순서를 보장받는 로직 처리가 가능합니다.(.then() 의 사용으로 콜백지옥에서 벗어날 수 있다.)
 
 ### 참고 블로그 : 
-[]()
+[[개발상식] Ajax와 Axios 그리고 fetch](https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch)
 
-[]()
+[자바스크립트 Promise 쉽게 이해하기](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
 
-[]()
+[Javascript | Fetch vs Axios 차이점 비교](https://yeonfamily.tistory.com/10)
+
+---
+
+
