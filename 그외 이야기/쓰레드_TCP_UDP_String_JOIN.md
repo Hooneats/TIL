@@ -35,9 +35,13 @@
 
 ### 참고 블로그 :
 [멀티프로세스 vs 멀티쓰레드](https://haloworld.tistory.com/141)
+
 [프로세스&쓰레드와 메모리(스택, 레지스터)](https://3dmpengines.tistory.com/2003)
+
 [[Java] Thread Pool(스레드 풀)](https://limkydev.tistory.com/55)
+
 [[Java] Thread 생성 방법과 Life Cycle](https://goodncuteman.tistory.com/20)
+
 
 ---
 
@@ -86,6 +90,7 @@
 
 ### 참고 :
 [인프런_모든 개발자를 위한 HTTP 웹 기본 지식](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC/dashboard)
+
 [김형수선생님의_수스어드밴스]()
 
 ---
@@ -96,6 +101,7 @@
 ### 그러나 단일 쓰레드 환경에서는 StringBuilder 가 StringBuffer 보다 성능이 뛰어나다.
 ### 참고 블로그 :
 [[Java] String, StringBuffer, StringBuilder 차이 및 장단점](https://ifuwanna.tistory.com/221)
+
 [자바 어플리케이션의 성능 향상](https://javacan.tistory.com/entry/7)
 
 ---
