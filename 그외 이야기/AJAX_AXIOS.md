@@ -26,6 +26,11 @@
 ###### TypeScript 는 정적타입언어로 동적타입언어인 Javascript 데이터 안정성을 보장합니다. 또한 인터페이스, 상속 등을 지원하여 객체지향적으로 데이터를 다룰 수 있습니다.
 ###### promise 객체는 .then() 으로 실행을 보장받음으로써(마치 콜백함수 같이) 실행순서를 보장받는 로직 처리가 가능합니다.(.then() 의 사용으로 콜백지옥에서 벗어날 수 있다.)
 
+---
+
+#### 참고로 Ajax, Axios, Fetch 등이 나오기 이전에 비동기 통신은 XMLHttpRequest 객체를 직접 생성해 이루어 졌다.
+#### 사용법은 요즘에는 잘 쓰지 않으니 블로그를 참고하자
+
 ### 참고 블로그 : 
 [[개발상식] Ajax와 Axios 그리고 fetch](https://velog.io/@kysung95/%EA%B0%9C%EB%B0%9C%EC%83%81%EC%8B%9D-Ajax%EC%99%80-Axios-%EA%B7%B8%EB%A6%AC%EA%B3%A0-fetch)
 
@@ -33,6 +38,10 @@
 
 [Javascript | Fetch vs Axios 차이점 비교](https://yeonfamily.tistory.com/10)
 
+[XMLHttpRequest 객체](http://www.ktword.co.kr/test/view/view.php?m_temp1=5939&id=1382)
+
+[TCPSchool - XMLHttpRequest](http://tcpschool.com/xml/xml_dom_xmlHttpRequest)
 ---
+
 
 
