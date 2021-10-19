@@ -17,6 +17,8 @@
 
 [[SpringBoot] Spring Security 처리 과정 및 구현 예제](https://mangkyu.tistory.com/77)
 
+[[Spring Boot] CORS 설정하기](https://dev-pengun.tistory.com/entry/Spring-Boot-CORS-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)
+
 ---
 
 ## JWT (JSON Web Token)
