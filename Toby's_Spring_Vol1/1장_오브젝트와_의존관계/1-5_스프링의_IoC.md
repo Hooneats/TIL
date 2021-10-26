@@ -15,3 +15,42 @@
 #### 기존 DaoFactory 코드에는 설정정보, 예를 들어 어떤 클래스의 오브젝트를 생성하고 어디에서 사용하도록 연결해줄 것인가 등에 관한 정보가 평범한 자바 코드로 만들어졌다.
 #### 애플리케이션 컨텍스트는 이런 정보를 담고 있진 않지만, 별도의 설정정보를 담고 있는 무언가를 가져와 이를 활용하는 범용적인 IoC 엔진이라 볼 수 있다.
 #### 앞에서는 DaoFactory 자체가 설정정보까지 담고 있는 IoC 엔진이었는데, 여기서는 자바 코드로 만든 애플리케이션 컨텍스트의 설정정보로 활용될 것이다.
+
+---
+### DaoFactory 를 사용하는 애플리케이션 컨텍스트
+#### ApplicationContext 는 빈 팩토리를 위한 오브젝트 설정을 담당하는 클래스이다.
+#### @Configuration 이라는 애노테이션을 붙여준다. 그리고
+#### 오브젝트를 만들어주는 메소드에는 @Bean 이라는 애노테이션을 붙여준다.
+#### UserDao() 메소드는 UserDao 타입  오브젝트를 생성하고 초기화해서 돌려주는 것이니 당연히 @Bean 이 붙는다.
+#### 또한 ConnectionMaker 타입의 오브젝트를 생성해주는 connectionMaker() 메소드에소 @Bean 을 붙여준다.
+### 이 두가지 애노테이션만으로 IoC 방식의 기능을 제공할 때 사용할 완벽한 설정정보가 된 것이다.
+```java
+
+@Configuration
+public class DaoFactory {
+    @Bean
+    public UserDao userDao() {
+        return new UserDao(connectionMaker());
+    } 
+    @Bean
+    public ConnectionMaker connectionMaker() {
+        return new DConnectionMaker();
+    }
+} 
+```
+#### 아래는 이렇게 등록한 @Bean 과 설정 정보를 사용하는 ApplicationContext 타입의 오브젝트이다.
+```java
+public class UserDaoTest {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        ApplicationContext context = new AnnotationConfigApplicationContext(DaoFactory.class);
+        UserDao dao = context.getBean("userDao", UserDao.class);
+    } 
+} 
+```
+#### @Configuration 이 붙은 자바 코드를 설정정보로 사용하려면 AnnotationConfigApplicationContext 를 이용하면 된다.
+#### ApplicationContext 의 getBean() 이라는 메소드를 이용해 UserDao 의 오브젝트를 가져올 수 있다.
+#### getBean() 메소드는 ApplicationContext 가 관리하는 오브젝트를 요청하는 메소드다.
+#### getBean() 의 파라미터인 "userDao" 는 ApplicationContext 에 등록된 빈의 이름이다.
+#### @Bean 이라는 애노테이션을 userDao 라는 이름의 메소드에 붙였는데, 이메소드 이름이 바로 빈의 이름이다(빈 이름생성전략-메소드이름으로)
+#### getBean() 은 기본적으로 Object 타입으로 리턴하게 되어 있어서 매번 리턴되는 오브젝트에 다시 캐스팅을 해줘야 하는 부담이 있다.
+#### 자바 5 이상의 제네릭 메소드 방식을 사용해 getBea() 의 두 번째 파라미터에 리턴 타입을 주면, 지저분한 캐스팅 코드를 사용하지 않아도 된다. (ex: context.getBean("userDao", UserDao.class);)
