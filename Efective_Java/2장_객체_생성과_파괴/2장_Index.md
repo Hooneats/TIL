@@ -10,4 +10,5 @@
 
 ### [6. 불필요한 객체 생성을 피하라](https://github.com/Hooneats/TIL/blob/main/Efective_Java/2%EC%9E%A5_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1%EA%B3%BC_%ED%8C%8C%EA%B4%B4/6_%EB%B6%88%ED%95%84%EC%9A%94%ED%95%9C_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1%EC%9D%84_%ED%94%BC%ED%95%98%EB%9D%BC.md)
 
+### [7_다 쓴 객체 참조를 해제하라]()
 
