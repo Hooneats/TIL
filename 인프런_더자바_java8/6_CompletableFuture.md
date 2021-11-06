@@ -152,3 +152,176 @@ public class App6 {
   ● thenRun(Runnable): 리턴값 받지 다른 작업을 처리하는 콜백
   ● 콜백 자체를 또 다른 쓰레드에서 실행할 수 있다.
 - 콜백또한 ~~~Async() 로 사용해서 두번째인자로 우리가 쓰레드풀로 만든 쓰레드도 사용가능
+```java
+/**
+ * CompletableFuture 1
+ */
+public class App7 {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        ExecutorService executorService = Executors.newFixedThreadPool(4);
+        Future<String> future = executorService.submit(() -> "hello");
+//        ...
+        executorService.shutdown();
+        System.out.println(future.get()); // future 한계는 get() 블록킹 이여서 콜백을 보장하기 힘들다
+
+        //비동기하기 좋은 Completablefuture
+        CompletableFuture<Object> future1 = new CompletableFuture<>();
+        future1.complete("keesun");
+        System.out.println(future1.get());
+
+        //사용2
+        CompletableFuture<String> future2 = CompletableFuture.completedFuture("keesun");
+        System.out.println(future2.get());
+
+        //사용3 void - ForkJoinPoll 사용
+        CompletableFuture<Void> future3 = CompletableFuture.runAsync(() -> {
+            System.out.println("Hello " + Thread.currentThread().getName());
+        });
+        future3.get();
+
+        //사용4 return - ForkJoinPool 사용
+        CompletableFuture<String> future4 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Hello1 " + Thread.currentThread().getName());
+            return "Hello";
+        });
+        System.out.println(future4.get());
+
+        //사용5 return - 콜백주기(리턴있는 콜백)
+        CompletableFuture<String> future5 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Hello2 " + Thread.currentThread().getName());
+            return "Hello1";
+        }).thenApply(s -> {
+            System.out.println(Thread.currentThread().getName());
+            return s.toUpperCase();
+        });
+        System.out.println("future5.get() = " + future5.get());
+
+        //사용6 return - 콜백주기(리턴없는 콜백)
+        CompletableFuture<Void> future6 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Hello3 " + Thread.currentThread().getName());
+            return "Hello2";
+        }).thenAccept(s -> {
+            System.out.println(Thread.currentThread().getName());
+            System.out.println("s.toUpperCase() = " + s.toUpperCase());
+        });
+        // 최종적인 값은 then 하고 호출된값이여서 리턴없는 thenAccept 이기에 null 출력
+        System.out.println("future6.get() = " + future6.get());
+
+        //사용7 return - 콜백주기(값을 받을 필요도 없다)
+        CompletableFuture<Void> future7 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Hello4 " + Thread.currentThread().getName());
+            return "Hello3";
+        }).thenRun(() -> {
+            System.out.println(Thread.currentThread().getName());
+        });
+        System.out.println("future7.get() = " + future7.get());
+
+        //사용8 쓰레드풀 커스텀
+        ExecutorService executorService1 = Executors.newFixedThreadPool(4);
+        CompletableFuture<Void> future8 = CompletableFuture.supplyAsync(() -> {
+          System.out.println("Hello5 " + Thread.currentThread().getName());
+          return "Hello4";
+        },executorService1).thenRunAsync(() -> {
+          System.out.println(Thread.currentThread().getName());
+        },executorService1);
+        System.out.println("future8.get() = " + future8.get());
+        executorService1.shutdown();
+    }
+}
+
+```
+
+## 6-5 CompletableFuture1
+- 조합하기
+● thenCompose(): 두 작업이 서로 이어서 실행하도록 조합
+● thenCombine(): 두 작업을 독립적으로 실행하고 둘 다 종료 했을 때 콜백 실행
+● allOf(): 여러 작업을 모두 실행하고 모든 작업 결과에 콜백 실행
+● anyOf(): 여러 작업 중에 가장 빨리 끝난 하나의 결과에 콜백 실행
+
+- 예외처리
+● exeptionally(Function)
+● handle(BiFunction):
+```java
+/**
+ * CompletableFuture 2
+ */
+public class App8 {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        // hello 결과사용해 world 호출하는경우
+        CompletableFuture<String> hello = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Hello " + Thread.currentThread().getName());
+            return "Hello";
+        });
+//        CompletableFuture<String> future = hello.thenCompose(s->getWorld(s));
+        CompletableFuture<String> future = hello.thenCompose(App8::getWorld);
+        System.out.println("future.get() = " + future.get());
+
+        // 둘의 연관관계가 없는경우 따로따로 하는경우(실행은 동시에)
+        CompletableFuture<String> hello1 = CompletableFuture.supplyAsync(() -> {
+            System.out.println("Hello " + Thread.currentThread().getName());
+            return "Hello";
+        });
+        CompletableFuture<String> World = CompletableFuture.supplyAsync(() -> {
+            System.out.println("World " + Thread.currentThread().getName());
+            return "World";
+        });
+        CompletableFuture<String> future1 = hello1.thenCombineAsync(World, (h, w) -> h + " " + w);
+        System.out.println("future1.get() = " + future1.get());
+
+
+        // 모든 비동기의 결과값을 컬렉션으로 받고 싶을때 ( join 은 UnCheckedException 을 발생시켜 에러가 나지 않는다. )
+        List<CompletableFuture<String>> futures = Arrays.asList(hello1, World);
+        CompletableFuture[] futuresArray = futures.toArray(new CompletableFuture[futures.size()]);
+        CompletableFuture<List<String>> results = CompletableFuture.allOf(futuresArray)
+                .thenApply(v -> {
+                    return futures.stream()
+                            .map(f -> f.join())
+                            .collect(Collectors.toList());
+                });
+        results.get().forEach(System.out::print);
+
+        System.out.println();
+        // 아무거나 하나 빨리끝난 비동기들의 첫번째 결과를 가져올때
+        CompletableFuture<Void> future2 = CompletableFuture.anyOf(futuresArray)
+                .thenAccept(System.out::println);
+        future2.get();
+
+        // 예외처리 .exceptionally
+        boolean throwError = true;
+        CompletableFuture<String> future3 = CompletableFuture.supplyAsync(() -> {
+            if (throwError) {
+                throw new IllegalArgumentException();
+            }
+            System.out.println("Hello " + Thread.currentThread().getName());
+            return "HELLO!";
+        }).exceptionally(ex -> {
+            return "Error!";
+        });
+        System.out.println(future3.get());
+
+        // 예외처리 .handle
+        boolean throwError2 = true;
+        CompletableFuture<String> future4 = CompletableFuture.supplyAsync(() -> {
+            if (throwError2) {
+                throw new IllegalArgumentException();
+            }
+            System.out.println("Hello " + Thread.currentThread().getName());
+            return "HELLO@";
+        }).handle((result, error) -> {
+            if (error != null) {
+                return "ERROR@";
+            }
+            return result;
+        });
+        System.out.println(future4.get());
+    }
+
+    private static CompletableFuture<String> getWorld(String message) {
+        return CompletableFuture.supplyAsync(() -> {
+            System.out.println("World " + Thread.currentThread().getName());
+            return  message+" World";
+        });
+    }
+}
+
+```
