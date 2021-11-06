@@ -12,3 +12,5 @@
 
 ### [7. 다 쓴 객체 참조를 해제하라](https://github.com/Hooneats/TIL/blob/main/Effective_Java/2%EC%9E%A5_%EA%B0%9D%EC%B2%B4_%EC%83%9D%EC%84%B1%EA%B3%BC_%ED%8C%8C%EA%B4%B4/7_%EB%8B%A4_%EC%93%B4_%EA%B0%9D%EC%B2%B4_%EC%B0%B8%EC%A1%B0%EB%A5%BC_%ED%95%B4%EC%A0%9C%ED%95%98%EB%9D%BC.md)
 
+### [8. finalizer 와 cleaner 사용을 피해라]()
+
